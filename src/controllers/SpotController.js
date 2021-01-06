@@ -1,7 +1,7 @@
-const Spot = require('../models/Spot');
-const User = require('../models/User');
+import Spot from '../models/Spot';
+import User from '../models/User';
 
-module.exports = {
+export default {
   async index(req, res) {
     const { tech } = req.query;
 

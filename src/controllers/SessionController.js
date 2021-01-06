@@ -1,4 +1,4 @@
-const User = require('../models/User');
+import User from '../models/User';
 
 async function findOrCreateUserByEmail(email) {
   let user = await User.findOne({ email });
@@ -10,7 +10,7 @@ async function findOrCreateUserByEmail(email) {
   return user;
 }
 
-module.exports = {
+export default {
   async store(req, res) {
     const { email } = req.body;
 

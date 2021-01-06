@@ -1,12 +1,12 @@
-const express = require('express');
-const multer = require('multer');
+import express from 'express';
+import multer from 'multer';
 
-const uploadConfig = require('./configs/upload');
+import uploadConfig from './configs/upload';
 
-const BookingController = require('./controllers/BookingController');
-const DashboardController = require('./controllers/DashboardController');
-const SessionController = require('./controllers/SessionController');
-const SpotController = require('./controllers/SpotController');
+import BookingController from './controllers/BookingController';
+import DashboardController from './controllers/DashboardController';
+import SessionController from './controllers/SessionController';
+import SpotController from './controllers/SpotController';
 
 const routes = express.Router();
 const upload = multer(uploadConfig);
@@ -17,4 +17,4 @@ routes.post('/spots', upload.single('thumbnail'), SpotController.store);
 routes.post('/spots/:spot_id/bookings', BookingController.store);
 routes.get('/dashboard', DashboardController.show);
 
-module.exports = routes;
+export default routes;

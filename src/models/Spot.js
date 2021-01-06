@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+import mongoose from 'mongoose';
 
 const SpotSchema = new mongoose.Schema({
   thumbnail: String,
@@ -12,4 +12,4 @@ const SpotSchema = new mongoose.Schema({
   },
 });
 
-module.exports = mongoose.model('Spot', SpotSchema);
+export default mongoose.model('Spot', SpotSchema);

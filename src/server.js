@@ -1,17 +1,18 @@
-const express = require('express');
-const mongoose = require('mongoose');
+import express from 'express';
 
-const { port, mongoStrConn } = require('./configs/varEnvs');
-const routes = require('./routes');
+import mongoose from 'mongoose';
+
+import { port, mongoStrConn } from './configs/varEnvs';
+import routes from './routes';
 
 const app = express();
 
-mongoose.connect(
-  mongoStrConn, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  },
-);
+const mongooseOptions = {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+};
+
+mongoose.connect(mongoStrConn, mongooseOptions);
 
 app.use(express.json());
 app.use(routes);

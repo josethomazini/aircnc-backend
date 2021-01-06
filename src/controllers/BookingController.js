@@ -1,6 +1,6 @@
-const Booking = require('../models/Booking');
+import Booking from '../models/Booking';
 
-module.exports = {
+export default {
   async store(req, res) {
     const { date } = req.body;
 

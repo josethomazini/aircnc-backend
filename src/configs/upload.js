@@ -1,5 +1,5 @@
-const multer = require('multer');
-const path = require('path');
+import multer from 'multer';
+import path from 'path';
 
 const uploadFolder = path.resolve(__dirname, '..', '..', 'uploads');
 
@@ -9,7 +9,7 @@ function generateFileName(req, file, cb) {
   cb(null, `${name}-${Date.now()}${ext}`);
 }
 
-module.exports = {
+export default {
   storage: multer.diskStorage({
     destination: uploadFolder,
     filename: generateFileName,
