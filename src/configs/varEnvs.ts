@@ -2,11 +2,14 @@ import dotenv from 'dotenv';
 
 dotenv.config();
 
-const DEFAULT_PORT = 3000;
+const DEFAULTS = {
+  PORT: 3000,
+  NODE_ENV: 'development',
+};
 
 const readPort = (): number => {
   if (process.env.PORT === undefined) {
-    return DEFAULT_PORT;
+    return DEFAULTS.PORT;
   }
   return parseInt(process.env.PORT, 10);
 };
@@ -18,5 +21,13 @@ const readMongoStrConnection = (): string => {
   return process.env.MONGO_STR_CONNECTION;
 };
 
-export const port: number = readPort();
+const readNodeEnv = (): string => {
+  if (process.env.NODE_ENV === undefined) {
+    return DEFAULTS.NODE_ENV;
+  }
+  return process.env.NODE_ENV;
+};
+
 export const mongoStrConn: string = readMongoStrConnection();
+export const nodeEnv: string = readNodeEnv();
+export const port: number = readPort();

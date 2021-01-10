@@ -91,6 +91,7 @@ export default {
     '@configs/(.*)': '<rootDir>/src/configs/$1',
     '@models/(.*)': '<rootDir>/src/models/$1',
     '@controllers/(.*)': '<rootDir>/src/controllers/$1',
+    '@services/(.*)': '<rootDir>/src/services/$1',
   },
 
   // An array of regexp pattern strings, matched against all module paths

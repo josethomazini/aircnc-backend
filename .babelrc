@@ -23,7 +23,8 @@
           "@src": "./src/",
           "@configs": "./src/configs",
           "@models": "./src/models",
-          "@controllers": "./src/controllers"
+          "@controllers": "./src/controllers",
+          "@services": "./src/services"
         }
       }
     ]

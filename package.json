@@ -1,16 +1,28 @@
 {
   "name": "aircnc-backend",
   "version": "1.0.0",
-  "description": "",
+  "description": "A mod from the RocketSeat tutorial to be a reference for backend projects",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/josethomazini/aircnc-backend"
+  },
+  "engines": {
+    "node": ">=14.15.3",
+    "npm": ">=6.14.9"
+  },
   "private": true,
   "scripts": {
-    "install-libs": "npm run _clear_modules && npm install",
-    "test": "jest",
-    "dev": "ts-node-dev -r tsconfig-paths/register --inspect=0.0.0.0:9229 --exit-child --respawn --ignore-watch node_modules --transpile-only -- src/server.ts",
+    "reinstall-libs": "npm-run-all _clear_package_lock _clear_modules && npm install",
+    "test:coverage": "jest --coverage --collectCoverageFrom=src/**/*.{js,jsx,ts,tsx}",
+    "test:unit": "watch, mocks",
+    "test:integration": "",
+    "dev": "ts-node-dev -r tsconfig-paths/register --inspect=0.0.0.0:9229 --exit-child --respawn --ignore-watch node_modules --transpile-only -- src/server.ts | pino-pretty -c",
+    "todos-finder": "find-todos",
     "build": "npm-run-all code_ok _clear_dist _transpile",
     "code_ok": "npm-run-all _type-check _lint",
-    "start": "node dist/server.js",
+    "start": "NODE_ENV=production node dist/server.js | pino-pretty -c",
     "_clear_modules": "rimraf node_modules || true",
+    "_clear_package_lock": "rimraf package-lock.json || true",
     "_clear_dist": "rimraf dist || true",
     "_lint": "eslint src --ext .ts,.js --fix",
     "_type-check": "tsc --noEmit",
@@ -30,6 +42,8 @@
     "@types/mongoose": "^5.10.3",
     "@types/multer": "^1.4.5",
     "@types/node": "^14.14.20",
+    "@types/pino": "^6.3.5",
+    "@types/supertest": "^2.0.10",
     "@typescript-eslint/eslint-plugin": "^4.12.0",
     "@typescript-eslint/parser": "^4.12.0",
     "babel-plugin-module-resolver": "^4.1.0",
@@ -39,9 +53,11 @@
     "eslint-import-resolver-node": "^0.3.4",
     "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-import-helpers": "^1.1.0",
+    "find-todos": "^1.0.3",
     "jest": "^26.6.3",
     "npm-run-all": "^4.1.5",
     "rimraf": "^3.0.2",
+    "supertest": "^6.0.1",
     "ts-jest": "^26.4.4",
     "ts-node": "^9.1.1",
     "ts-node-dev": "^1.1.1",
@@ -54,6 +70,8 @@
     "eslint-import-resolver-custom-alias": "^1.2.0",
     "express": "^4.17.1",
     "mongoose": "^5.11.9",
-    "multer": "^1.4.2"
+    "multer": "^1.4.2",
+    "pino": "^6.10.0",
+    "pino-pretty": "^4.3.0"
   }
 }
