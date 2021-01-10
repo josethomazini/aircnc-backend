@@ -1,6 +1,8 @@
+import { Request, Response } from 'express';
+
 import User from '../models/User';
 
-async function findOrCreateUserByEmail(email) {
+async function findOrCreateUserByEmail(email: string) {
   let user = await User.findOne({ email });
 
   if (!user) {
@@ -11,7 +13,7 @@ async function findOrCreateUserByEmail(email) {
 }
 
 export default {
-  async store(req, res) {
+  async store(req: Request, res: Response) {
     const { email } = req.body;
 
     if (!email) {

@@ -1,7 +1,9 @@
+import { Request, Response } from 'express';
+
 import Booking from '../models/Booking';
 
 export default {
-  async store(req, res) {
+  async store(req: Request, res: Response) {
     const { date } = req.body;
 
     const booking = await Booking.create({

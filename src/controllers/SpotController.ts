@@ -1,8 +1,10 @@
+import { Request, Response } from 'express';
+
 import Spot from '../models/Spot';
 import User from '../models/User';
 
 export default {
-  async index(req, res) {
+  async index(req: Request, res: Response) {
     const { tech } = req.query;
 
     const spots = await Spot.find({
@@ -12,7 +14,7 @@ export default {
     return res.json(spots);
   },
 
-  async store(req, res) {
+  async store(req: Request, res: Response) {
     const userId = req.headers.user_id;
 
     const user = await User.findById(userId);
@@ -24,7 +26,7 @@ export default {
     const { filename } = req.file;
     const { company, techs, price } = req.body;
 
-    const techList = techs.split(',').map((tech) => tech.trim());
+    const techList = techs.split(',').map((tech: string) => tech.trim());
 
     const spot = await Spot.create({
       user: userId,
