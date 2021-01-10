@@ -12,7 +12,7 @@
   },
   "private": true,
   "scripts": {
-    "reinstall-libs": "npm-run-all _clear_package_lock _clear_modules && npm install",
+    "install-libs": "npm run _clear_package_lock && npm run _clear_modules && npm install",
     "test:coverage": "jest --coverage --collectCoverageFrom=src/**/*.{js,jsx,ts,tsx}",
     "test:unit": "watch, mocks",
     "test:integration": "",
