@@ -1,7 +1,7 @@
 import { Request, Response } from 'express';
 
-import Spot from '../models/Spot';
-import User from '../models/User';
+import Spot from '@models/Spot';
+import User from '@models/User';
 
 export default {
   async index(req: Request, res: Response) {

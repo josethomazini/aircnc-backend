@@ -1,6 +1,6 @@
 import { Request, Response } from 'express';
 
-import User from '../models/User';
+import User from '@models/User';
 
 async function findOrCreateUserByEmail(email: string) {
   let user = await User.findOne({ email });

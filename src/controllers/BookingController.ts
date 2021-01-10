@@ -1,6 +1,6 @@
 import { Request, Response } from 'express';
 
-import Booking from '../models/Booking';
+import Booking from '@models/Booking';
 
 export default {
   async store(req: Request, res: Response) {

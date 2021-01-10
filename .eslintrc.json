@@ -1,6 +1,20 @@
 {
   "settings": {
     "import/resolver": {
+      "eslint-import-resolver-custom-alias": {
+        "alias": {
+          "@root": "./src/",
+          "@configs": "./src/configs",
+          "@models": "./src/models",
+          "@controllers": "./src/controllers"
+        },
+        "extensions": [
+          ".js",
+          ".ts",
+          ".jsx",
+          ".tsx"
+        ]
+      },
       "node": {
         "paths": [
           "src"
@@ -52,11 +66,7 @@
         "groups": [
           "module",
           "/^@shared/",
-          [
-            "parent",
-            "sibling",
-            "index"
-          ]
+          "/^@/"
         ],
         "alphabetize": {
           "order": "asc",

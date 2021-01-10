@@ -1,6 +1,6 @@
 import { Request, Response } from 'express';
 
-import Spot from '../models/Spot';
+import Spot from '@models/Spot';
 
 export default {
   async show(req: Request, res: Response) {
