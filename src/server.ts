@@ -2,7 +2,7 @@ import express from 'express';
 import mongoose from 'mongoose';
 
 import { port, mongoStrConn } from '@configs/varEnvs';
-import routes from '@root/routes';
+import routes from '@src/routes';
 
 const app = express();
 

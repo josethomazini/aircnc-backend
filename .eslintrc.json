@@ -3,7 +3,7 @@
     "import/resolver": {
       "eslint-import-resolver-custom-alias": {
         "alias": {
-          "@root": "./src/",
+          "@src": "./src/",
           "@configs": "./src/configs",
           "@models": "./src/models",
           "@controllers": "./src/controllers"
@@ -30,7 +30,8 @@
   },
   "env": {
     "browser": true,
-    "es2021": true
+    "es2021": true,
+    "jest": true
   },
   "extends": [
     "airbnb-base"

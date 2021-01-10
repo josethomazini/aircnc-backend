@@ -11,7 +11,8 @@
     "@babel/preset-typescript"
   ],
   "ignore": [
-    "node_modules"
+    "node_modules",
+    "**/*.spec.ts"
   ],
   "comments": false,
   "plugins": [
@@ -19,7 +20,7 @@
       "babel-plugin-module-resolver",
       {
         "alias": {
-          "@root": "./src/",
+          "@src": "./src/",
           "@configs": "./src/configs",
           "@models": "./src/models",
           "@controllers": "./src/controllers"
